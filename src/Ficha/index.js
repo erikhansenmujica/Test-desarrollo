@@ -3,6 +3,7 @@ import "./css.css";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { filter } from "../store/actions/cars";
+import Carousel from "../Carousel";
 
 export default () => {
   const { name } = useParams();
@@ -12,7 +13,7 @@ export default () => {
     if (name) dispatch(filter(null, "One", null, allCars, name));
   }, []);
   const car = useSelector((state) => state.uniqueCar);
-  console.log(car)
+  console.log(car);
   return (
     <div>
       <div className="firstBlock">
@@ -31,7 +32,7 @@ export default () => {
           </p>
         </div>
       </div>
-
+      <Carousel />
       <div className="firstBlock1">
         <div className="titleContent1">
           <h3>Titulito</h3>
