@@ -13,8 +13,8 @@ export default ({ item }) => {
       <p>
         {item.year} | ${item.price}
       </p>
-      <img src={`/cars/${item.img[0]}`} alt="itemimg" className="itemImg"></img>
-      <button onClick={()=>goTo(`/ficha/${item.name}`)}>Ver Modelo</button>
+      <img src={`http://challenge.agenciaego.tech${item.thumbnail}`} alt="itemimg" className="itemImg"></img>
+      <button onClick={()=>goTo(`/ficha/${item.id}`)}>Ver Modelo</button>
     </div>
   );
 };

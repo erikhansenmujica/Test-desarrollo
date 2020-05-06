@@ -22,8 +22,7 @@ export default ({ location, goTo, active, setActive, width }) => (
       )}
       {width > 800 && (
         <div
-          className={location === "ficha" ? "buttons-active" : "buttons"}
-          onClick={() => goTo("/ficha")}
+          className={location === "ficha" ? "buttons-active" : "buttons2"}
         >
           Ficha De Modelo
         </div>
@@ -45,9 +44,10 @@ export default ({ location, goTo, active, setActive, width }) => (
             Close{" "}
             <img
               src="/navbar/fill-1.png"
-              srcset="/navbar/fill-1@2x.png 2x,
+              srcSet="/navbar/fill-1@2x.png 2x,
              /navbar/fill-1@3x.png 3x"
               onClick={() => setActive(!active)}
+              alt="img"
             ></img>
           </div>
           <div className="dropDownBlock">

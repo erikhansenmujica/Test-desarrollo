@@ -1,10 +1,13 @@
+import axios from "axios";
+
 import {
   CAT_FILTER,
   MOST_EXPENSIVE_FILTER,
   CHEAPER_FILTER,
   NEWEST_FILTER,
   OLDEST_FILTER,
-  ONLY_ONE
+  ALL_CARS,
+  SET_CAR,
 } from "../constants";
 export function categoryFilter(cars, cat) {
   return {
@@ -12,6 +15,30 @@ export function categoryFilter(cars, cat) {
     type: CAT_FILTER,
     cat,
   };
+}
+function setAllCars(cars) {
+  return {
+    cars: cars,
+    type: ALL_CARS,
+  };
+}
+function setSingleCar(car) {
+  return {
+    car: car,
+    type: SET_CAR,
+  };
+}
+export function modelsFetch() {
+  return (dispatch) => 
+    axios
+      .get("http://challenge.agenciaego.tech/models")
+      .then((models) => dispatch(setAllCars(models.data)));
+}
+export function uniqueFetch(id) {
+  return (dispatch) =>
+    axios
+      .get(`http://challenge.agenciaego.tech/models/${id}`)
+      .then((model) => dispatch(setSingleCar(model.data)));
 }
 export function filter(cars, type, cat, allCars, name) {
   switch (type) {
@@ -34,12 +61,6 @@ export function filter(cars, type, cat, allCars, name) {
       return {
         cars: cars,
         type: OLDEST_FILTER,
-      };
-    case "One":
-      return {
-        allCars: allCars,
-        type: ONLY_ONE,
-        name:name
       };
     case "Nada":
       return {

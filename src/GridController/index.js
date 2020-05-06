@@ -9,11 +9,12 @@ export default () => {
   const [active, setActive] = useState("Todos");
   const [activeMobile, setActiveMobile] = useState(false);
   useEffect(()=>{
+    console.log(active)
     dispatch(filter(cars,activeDropdown,active, allCars));
   },[active])
   const [activeDropdown, setActiveDropdown] = useState("Nada");
   const [showDropdown, setShowDropdown] = useState(false);
-  const buttons = ["Todos", "Autos", "Pickups", "Comerciales", "SUV"];
+  const buttons = ["Todos", "Autos", "Pickups y Comerciales", "SUV"];
   const dropdownButtons = [
     "Nada",
     "De menor a mayor precio",

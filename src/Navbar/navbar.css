@@ -31,6 +31,20 @@
   text-align: center;
   align-self: center;
 }
+.buttons2 {
+  width: 121px;
+  height: 18px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #444444;
+  text-align: center;
+  align-self: center;
+}
 
 .buttons:hover {
   width: 121px;

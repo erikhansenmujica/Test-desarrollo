@@ -8,8 +8,9 @@ export default ({ content, active, setActive, dispatch, cars }) => (
       content === active ? "controllerButtonActive" : "controllerButton"
     }
     onClick={() => {
-        dispatch(categoryFilter(cars, content));
-        setActive(content)}}
+      setActive(content);
+      dispatch(categoryFilter(cars, content));
+    }}
   >
     {content}
   </button>
